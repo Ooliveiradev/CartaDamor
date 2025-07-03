@@ -5,15 +5,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
+  <link rel="stylesheet" href="css/link/style.css">
 </head>
 
 <body>
-  <h1>Para meu amor...</h1>
-  <p></p>
-  <iframe style="border-radius: 12px"
-    src="https://open.spotify.com/embed/track/4HQ4VFKOJRnTGZlYOOgrr6?utm_source=generator" width="100%" height="152"
-    frameborder="0" allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <header>
+    <h1>Para meu amor...</h1>
+    <canvas id="stars"></canvas>
+  </header>
+  <main>
+    <article class="carta">
+      <p>Nem sempre eu sei como colocar tudo isso em palavras, mas a verdade é que desde que você entrou na minha vida,
+        tudo
+        ficou mais leve, mais bonito e mais cheio de sentido. Você tem esse poder de transformar qualquer dia comum em
+        algo
+        especial só por estar nele.</p>
+      <p>Eu amo o jeito que você sorri, o jeito que me olha como se me enxergasse por inteiro, e amo mais ainda o jeito
+        que
+        a gente se encaixa. Às vezes penso que, se o mundo desabasse lá fora, só de estar com você eu já me sentiria em
+        paz.
+      </p>
+    </article>
+    <article class="musica">
+      <h4>Se eu pudesse transformar o que sinto por você em som, seria essa música.</h4>
+      <iframe style="border-radius: 12px"
+        src="https://open.spotify.com/embed/track/4HQ4VFKOJRnTGZlYOOgrr6?utm_source=generator" width="100%" height="152"
+        frameborder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+        id="spotify"></iframe>
+    </article>
+
+    <article>
+      <div class="carousel">
+        <div class="carousel-images" id="carouselImages">
+          <img src="images/img3.jpg" alt="Foto 3">
+          <img src="images/img4.jpg" alt="Foto 4">
+          <img src="images/img5.jpg" alt="Foto 5">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="prev()">Anterior</button>
+        <button onclick="next()">Próxima</button>
+      </div>
+    </article>
+  </main>
+  <script src="js/carrossel.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
