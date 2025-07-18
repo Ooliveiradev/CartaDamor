@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(135deg, #fdfdfd, #f0f4ff);
+  background: linear-gradient(135deg, hsla(0, 100%, 83%, 0.355), #ff9696);
   line-height: 1.6;
   padding-bottom: 40px;
   color: #333;
