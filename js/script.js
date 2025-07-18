@@ -1,35 +1,45 @@
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
+// Quantidade de estrelas da constelação
+const starCount = 7;
+
+// Arrays reutilizados para armazenar estrelas e conexões
+let stars = [];
+const connections = [];
+
+function initStars() {
+  stars = [];
+  connections.length = 0;
+
+  for (let i = 0; i < starCount; i++) {
+    const x = (i + 1) * (canvas.width / (starCount + 1));
+    const yBase = 160 + Math.sin(i * 1.2) * 40;
+
+    stars.push({
+      x,
+      yBase,
+      y: yBase,
+      radius: Math.random() * 2 + 1,
+      alpha: Math.random() * 0.5 + 0.5,
+      pulse: Math.random() * 0.02 + 0.005,
+      offset: Math.random() * 50,
+    });
+
+    if (i > 0) {
+      connections.push([i - 1, i]);
+    }
+  }
+}
+
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = 300; // Altura do cabeçalho
+  initStars();
 }
+
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
-
-// Criar estrelas com posição base
-const starCount = 7;
-const stars = [];
-const connections = [];
-
-for (let i = 0; i < starCount; i++) {
-  let x = (i + 1) * (canvas.width / (starCount + 1));
-  let yBase = 160 + Math.sin(i * 1.2) * 40;
-  stars.push({
-    x,
-    yBase,
-    y: yBase,
-    radius: Math.random() * 2 + 1,
-    alpha: Math.random() * 0.5 + 0.5,
-    pulse: Math.random() * 0.02 + 0.005,
-    offset: Math.random() * 50,
-  });
-
-  if (i > 0) {
-    connections.push([i - 1, i]);
-  }
-}
 
 let time = 0;
 
