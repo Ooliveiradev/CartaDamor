@@ -9,6 +9,7 @@ let stars = [];
 const connections = [];
 
 function initStars() {
+  time = 0; // restart animation offset on resize
   stars = [];
   connections.length = 0;
 
